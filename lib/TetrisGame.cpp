@@ -138,6 +138,7 @@ void TetrisGame::left()
 {
     if(m_activebox->left()) {
         notifyObservers();
+        cout << this->m_nextBox;
     }
 }
 
@@ -147,6 +148,7 @@ void TetrisGame::right()
 {
     if(m_activebox->right()) {
         notifyObservers();
+        cout << this->m_nextBox;
     }
 }
 
@@ -159,6 +161,7 @@ void TetrisGame::stop()
         m_gameStatus = GameStatus::stop;
         m_winStatus = WinStatus::lose;
         notifyObservers();
+        cout << this->m_nextBox;
     }
 }
 
@@ -240,3 +243,4 @@ std::shared_ptr<RandomBox> TetrisGame::getNextBox() const
 }
 
 }
+
